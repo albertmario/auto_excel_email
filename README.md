@@ -1,1 +1,3 @@
-# auto_excel_email
+- Ambil data dari database
+- Insert ke excel
+- Kirim email
