@@ -11,7 +11,7 @@ import datetime # untuk kerja dengan waktu
 import requests
 import smtplib # untuk kerja dngan email
 import pymssql # untuk kerja dengan mssql server
-import json
+import os
 
 COLS = 4
 
@@ -104,6 +104,8 @@ Free text
 
 	smtpobj.sendmail(sender, recipients, msg.as_string())
 	smtpobj.quit()
+
+	os.system('rm "%s"' % file_name)
 
 def send_alert(pesan):
 	url = 'https://api.telegram.org/bot<token>/sendMessage?chat_id=<id>&parse_mode=markdown&text=%s' % pesan
